@@ -15,16 +15,11 @@ type ResponseType<T> = {
     data: T
 }
 
-
-
-
-
 const instance = axios.create(
     {
         baseURL: 'https://social-network.samuraijs.com/api/1.1/',
         withCredentials: true,
         headers: {
-            // Не забываем заменить API-KEY на собственный
             'API-KEY': '5835496f-e51a-452d-a3a0-e64dd670b3f1',
         },
     }

@@ -44,7 +44,7 @@ export const CreateTodolist = () => {
 export const DeleteTodolist = () => {
     const [state, setState] = useState<any>(null)
     useEffect(() => {
-        const todolistId = '039bfbfc-d33a-4a60-8d8d-2870d7f26ddc';
+        const todolistId = '859f13d1-91d0-4c50-8463-fb83d5d98bba';
         todolistAPI
             .deleteTodolist(`https://social-network.samuraijs.com/api/1.0/todo-lists/${todolistId}`)
             .then((res) => {
