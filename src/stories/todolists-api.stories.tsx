@@ -10,13 +10,6 @@ export default {
     title: 'API'
 }
 
-const settings = {
-    withCredentials: true,
-    headers: {
-        'API-KEY': '5835496f-e51a-452d-a3a0-e64dd670b3f1'
-    }
-}
-
 export const GetTodolists = () => {
     const [state, setState] = useState<any>(null)
     useEffect(() => {
@@ -31,7 +24,6 @@ export const GetTodolists = () => {
 export const CreateTodolist = () => {
     const [state, setState] = useState<any>(null)
     useEffect(() => {
-        const title = 'newTodolist'
         todolistAPI
             .createTodolist('newTodolist')
             .then((res) => {
@@ -44,9 +36,9 @@ export const CreateTodolist = () => {
 export const DeleteTodolist = () => {
     const [state, setState] = useState<any>(null)
     useEffect(() => {
-        const todolistId = '859f13d1-91d0-4c50-8463-fb83d5d98bba';
+        const todolistId = '4f955151-8b2e-4efc-9645-cb9876721cdb';
         todolistAPI
-            .deleteTodolist(`https://social-network.samuraijs.com/api/1.0/todo-lists/${todolistId}`)
+            .deleteTodolist(todolistId)
             .then((res) => {
                 setState(res.data)
             })
@@ -60,6 +52,35 @@ export const UpdateTodolistTitle = () => {
         const todolistId = '0f677125-5886-4777-96a6-25d9bd9562f2'
         todolistAPI
             .updateTodolist(todolistId, 'SOME NEW TITLE')
+            .then((res) => {
+                setState(res.data)
+            })
+    }, [])
+
+    return <div> {JSON.stringify(state)}</div>
+}
+
+export const GetTasks = () => {
+    const [state, setState] = useState<any>(null)
+    useEffect(() => {
+        const id = '283b6028-92e7-4a67-8460-90d0c0c8c67d'
+        todolistAPI
+            .getTasks(id)
+            .then((res) => {
+                setState(res.data)
+            })
+    }, [])
+
+    return <div> {JSON.stringify(state)}</div>
+}
+
+export const DeleteTask = () => {
+    const [state, setState] = useState<any>(null)
+    useEffect(() => {
+        const id = '283b6028-92e7-4a67-8460-90d0c0c8c67d'
+        const taskId = ''
+        todolistAPI
+            .deleteTasks(id, taskId)
             .then((res) => {
                 setState(res.data)
             })
