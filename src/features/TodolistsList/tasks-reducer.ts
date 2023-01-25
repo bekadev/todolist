@@ -8,7 +8,7 @@ import {AppRootStateType} from '../../app/store'
 const initialState: TasksStateType = {}
 
 
-
+//taskreducer
 export const tasksReducer = (state: TasksStateType = initialState, action: ActionsType): TasksStateType => {
     switch (action.type) {
         case 'REMOVE-TASK':
