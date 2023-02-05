@@ -23,6 +23,7 @@ type PropsType = {
     changeTodolistTitle: (id: string, newTitle: string) => void
     filter: FilterValuesType
 
+
 }
 
 export const Todolist = React.memo(function (props: PropsType) {
