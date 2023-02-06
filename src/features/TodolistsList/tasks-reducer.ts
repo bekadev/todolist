@@ -12,7 +12,7 @@ import error = Simulate.error;
 const initialState: TasksStateType = {}
 
 
-//taskreducer
+
 export const tasksReducer = (state: TasksStateType = initialState, action: ActionsType): TasksStateType => {
     switch (action.type) {
         case 'REMOVE-TASK':
