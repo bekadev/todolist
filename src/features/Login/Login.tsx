@@ -8,8 +8,9 @@ import FormLabel from '@mui/material/FormLabel';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import {useFormik} from "formik";
-import {useDispatch} from "react-redux";
+import {Navigate} from "react-router-dom";
 import {loginTC} from "./auth-reducer";
+import {useAppDispatch, useAppSelector} from "../../app/store";
 
 export const Login = () => {
     type FormikErrorType = {
@@ -18,7 +19,8 @@ export const Login = () => {
         rememberMe?: boolean
     }
 
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
+    const isLoggedIn = useAppSelector(state => state.auth.isLoggedIn)
 
     const formik = useFormik({
         initialValues: {
@@ -40,6 +42,10 @@ export const Login = () => {
             formik.resetForm()
         },
     })
+
+    if (isLoggedIn) {
+        return <Navigate to='/'/>
+    }
 
 
     return <Grid container justifyContent={'center'}>
