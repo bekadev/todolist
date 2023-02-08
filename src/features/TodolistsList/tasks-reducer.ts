@@ -5,7 +5,6 @@ import {AppRootStateType} from '../../app/store'
 import {setAppErrorAC, SetAppErrorActionType, setAppStatusAC, SetAppStatusActionType} from "../../app/app-reducer";
 import {handleServerAppError, handleServerNetworkError} from "../../utils/error-utils";
 import {Simulate} from "react-dom/test-utils";
-import error = Simulate.error;
 
 
 //initialState
