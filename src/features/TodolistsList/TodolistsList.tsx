@@ -29,7 +29,7 @@ export const TodolistsList: React.FC<PropsType> = ({demo = false, ...props}: Pro
 
     const dispatch = useAppDispatch()
     const isLoggedIn = useAppSelector(state => state.auth.isLoggedIn)
-
+    console.log('isLoggedIn ', isLoggedIn)
 
     useEffect(() => {
         if (demo || !isLoggedIn) {
