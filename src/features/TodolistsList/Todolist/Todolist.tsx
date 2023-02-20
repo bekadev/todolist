@@ -5,10 +5,10 @@ import {Task} from './Task/Task'
 import {TaskStatuses, TaskType} from '../../../api/todolists-api'
 import {FilterValuesType} from '../todolists-reducer'
 import {fetchTasksTC} from '../tasks-reducer'
-import IconButton from '@mui/material/IconButton';
-import Button from '@mui/material/Button';
-import {Delete} from '@mui/icons-material';
-import {useAppDispatch} from "../../../app/store";
+import IconButton from '@mui/material/IconButton'
+import Button from '@mui/material/Button'
+import {Delete} from '@mui/icons-material'
+import {useAppDispatch} from "../../../app/store"
 
 type PropsType = {
     id: string
@@ -25,7 +25,7 @@ type PropsType = {
     demo?: boolean
 }
 
-export const Todolist = React.memo(function ({demo = false, ...props}: PropsType) {
+export const Todolist: React.FC<PropsType> = React.memo(function ({demo = false, ...props}) {
 
     const dispatch = useAppDispatch()
 

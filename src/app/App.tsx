@@ -41,8 +41,6 @@ function App({demo = false}: PropsType) {
         return <CircularProgress style={{position: 'fixed', top: '30%', left: '50%'}}/>
     }
 
-
-
     return (
         <BrowserRouter>
             <div className="App">
