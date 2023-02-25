@@ -23,6 +23,7 @@ type PropsType = {
     demo?: boolean
 }
 export const TodolistsList: React.FC<PropsType> = ({demo = false, ...props}: PropsType) => {
+    console.log('working...')
 
     const todolists = useAppSelector<Array<TodolistDomainType>>(state => state.todolists)
     const tasks = useAppSelector<TasksStateType>(state => state.tasks)
