@@ -23,7 +23,7 @@ export const todolistsReducer = (state: Array<TodolistDomainType> = initialState
     }
 }
 
-// actions
+// actions //
 export const removeTodolistAC = (id: string) => ({type: 'REMOVE-TODOLIST', id} as const)
 export const addTodolistAC = (todolist: TodolistType) => ({type: 'ADD-TODOLIST', todolist} as const)
 export const changeTodolistTitleAC = (id: string, title: string) => ({
@@ -43,7 +43,7 @@ export const changeTodolistEntityStatusAC = (id: string, status: RequestStatusTy
 } as const)
 export const setTodolistsAC = (todolists: Array<TodolistType>) => ({type: 'SET-TODOLISTS', todolists} as const)
 
-// thunks
+// thunks //
 export const fetchTodolistsTC = () => {
     return (dispatch: Dispatch<ActionsType | SetAppStatusActionType>) => {
         dispatch(setAppStatusAC('loading'))
@@ -84,7 +84,7 @@ export const changeTodolistTitleTC = (id: string, title: string) => {
     }
 }
 
-// types
+// types //
 export type AddTodolistActionType = ReturnType<typeof addTodolistAC>;
 export type RemoveTodolistActionType = ReturnType<typeof removeTodolistAC>;
 export type SetTodolistsActionType = ReturnType<typeof setTodolistsAC>;
