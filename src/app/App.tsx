@@ -15,11 +15,11 @@ import {HashRouter, Route, Routes} from "react-router-dom";
 import {Login} from "../features/Login/Login";
 import {logoutTC} from "../features/Login/auth-reducer";
 import {TodolistsList} from "../features/TodolistsList/TodolistsList";
-
+// props type
 type PropsType = {
     demo?: boolean
 }
-
+// app base component
 function App({demo = false}: PropsType) {
 
     const status = useSelector<AppRootStateType, RequestStatusType>((state) => state.app.status)
